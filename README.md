@@ -1,5 +1,5 @@
 # Ex04 Simple Calculator - React Project
-## Date:
+## Date:29.03.23
 
 ## AIM
 To  develop a Simple Calculator using React.js with clean and responsive design, ensuring a smooth user experience across different screen sizes.
@@ -46,9 +46,155 @@ Deploy the website.
 Upload to GitHub Pages for free hosting.
 
 ## PROGRAM
+index.js
+```
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
+app.css
+```
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #9aa1a6, #232965);
+}
+
+.container {
+  width: 300px;
+}
+
+.calculator {
+  background-color: rgb(8, 8, 8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.display input {
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  text-align: right;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(250, 250, 250);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 60px;
+  font-size: 20px;
+  background-color: rgb(9, 66, 99);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+button:active {
+  background-color: rgb(100, 100, 200);
+}
+
+button:nth-child(16) {
+  background-color: rgb(112, 9, 51); /* Red for 'C' */
+}
+
+```
+app.js
+```
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [input, setInput] = useState('');
+
+  const handleClick = (value) => {
+    setInput(input + value);
+  };
+
+  const clearInput = () => {
+    setInput('');
+  };
+
+  const calculateResult = () => {
+    try {
+      setInput(eval(input));
+    } catch {
+      setInput('Error');
+    }
+  };
+
+  return (
+    <div className="container">
+      <div className="calculator">
+        <form className="display">
+          <input type="text" value={input} readOnly />
+        </form>
+
+        <div className="buttons">
+          <button onClick={() => handleClick('1')}>1</button>
+          <button onClick={() => handleClick('2')}>2</button>
+          <button onClick={() => handleClick('3')}>3</button>
+          <button onClick={() => handleClick('+')}>+</button>
+
+          <button onClick={() => handleClick('4')}>4</button>
+          <button onClick={() => handleClick('5')}>5</button>
+          <button onClick={() => handleClick('6')}>6</button>
+          <button onClick={() => handleClick('-')}>-</button>
+
+          <button onClick={() => handleClick('7')}>7</button>
+          <button onClick={() => handleClick('8')}>8</button>
+          <button onClick={() => handleClick('9')}>9</button>
+          <button onClick={() => handleClick('*')}>*</button>
+
+          <button onClick={() => handleClick('0')}>0</button>
+          <button onClick={clearInput}>C</button>
+          <button onClick={calculateResult}>=</button>
+          <button onClick={() => handleClick('/')}>/</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;
+```
 
 
 ## OUTPUT
+![Screenshot 2025-03-29 142846](https://github.com/user-attachments/assets/df519621-4fdf-46bc-99ae-d96f8e394363)
+![Screenshot 2025-03-29 142859](https://github.com/user-attachments/assets/9ec6d272-1e50-4d87-aef3-9248db27d5a9)
+
+
 
 
 ## RESULT
