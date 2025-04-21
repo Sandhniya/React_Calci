@@ -131,6 +131,7 @@ button:nth-child(16) {
 ```
 app.js
 ```
+
 import React, { useState } from 'react';
 import './App.css';
 
@@ -174,7 +175,7 @@ function App() {
           <button onClick={() => handleClick('7')}>7</button>
           <button onClick={() => handleClick('8')}>8</button>
           <button onClick={() => handleClick('9')}>9</button>
-          <button onClick={() => handleClick('*')}>*</button>
+          <button onClick={() => handleClick('')}></button>
 
           <button onClick={() => handleClick('0')}>0</button>
           <button onClick={clearInput}>C</button>
@@ -182,17 +183,94 @@ function App() {
           <button onClick={() => handleClick('/')}>/</button>
         </div>
       </div>
+
+      {/* Footer Section */}
+      <footer className="footer">
+        <p>Reg No: 212223220093 | Name: Sandhiya Sree</p>
+      </footer>
     </div>
   );
 }
 
 export default App;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #3498db, #8e44ad);
+}
+
+.container {
+  width: 300px;
+}
+
+.calculator {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.display input {
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  text-align: right;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(240, 240, 240);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 60px;
+  font-size: 20px;
+  background-color: rgb(91, 91, 151);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(137, 22, 245);
+}
+
+button:active {
+  background-color: rgb(100, 100, 200);
+}
+
+button:nth-child(16) {
+  background-color: rgb(220, 53, 69); /* Red for 'C' */
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+}
 ```
 
 
 ## OUTPUT
-![Screenshot 2025-03-29 142846](https://github.com/user-attachments/assets/df519621-4fdf-46bc-99ae-d96f8e394363)
-![Screenshot 2025-03-29 142859](https://github.com/user-attachments/assets/9ec6d272-1e50-4d87-aef3-9248db27d5a9)
+![image](https://github.com/user-attachments/assets/6e989a09-2ed5-47cf-958b-ab0dbec2b407)
+
 
 
 
